@@ -18,3 +18,16 @@ Guide to install PowerShell Core and PowerCLI 10 on Ubuntu 20.04 to connect to a
 `sudo apt-get install -y powershell`
 * Start PowerShell
 `pwsh`
+
+## Installation PowerCLI 10
+To install the PowerCLI 10, you just need to open the PowerShell with the pwsh command and run a install-module:
+
+* For the system - you need higher permissions of course
+
+`Install-Module -Name VMware.PowerCLI`
+
+* For the current logged in user
+
+`Install-Module -Name VMware.PowerCLI -Scope CurrentUser`
+
+The installation takes a while and you need to agree to trust the PSGallery modules, as PowerCLI is one of them.
