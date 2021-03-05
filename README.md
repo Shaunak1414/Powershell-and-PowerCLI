@@ -45,6 +45,7 @@ The installation takes a while and you need to agree to trust the PSGallery modu
 `Connect-VIServer vcenter.dns.name -user -pass`
 
 __Error :connect-VIserver the SSL connection cannot be established see inner exception__
+
 `Set-PowerCLIConfiguration -InvalidCertificateAction Ignore`
 
 ### First Commands
