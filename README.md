@@ -49,6 +49,7 @@ __Error :connect-VIserver the SSL connection cannot be established see inner exc
 
 ### First Commands
 
-`*Get-VM
-*Get-VMHOST`
+` Get-VM
+
+Get-VMHOST`
 
