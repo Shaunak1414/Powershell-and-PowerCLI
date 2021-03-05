@@ -2,7 +2,7 @@
 Guide to install PowerShell Core and PowerCLI 10 on Ubuntu 20.04 to connect to a VMware vCenter or ESXi host.
 
 ## Powershell Installation via Package Repository
-* Update the list of packages
+* Open Terminal and Update the list of packages
 `sudo apt-get update`
 * Install pre-requisite packages.
 `sudo apt-get install -y wget apt-transport-https software-properties-common`
