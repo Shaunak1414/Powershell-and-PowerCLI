@@ -35,7 +35,7 @@ Once you have a tag category you are able to create new tags in it. This is done
 
 You can also create multiple tags – by reading the input values from CSV file or from other cmdlets. Here is how to create tags for each user in the “Example.org” domain:
 
-* Retrieve all user accounts in the “Example.org” domain
+Retrieve all user accounts in the “Example.org” domain
 
 `$userList = Get-VIAccount –User –Domain “Example.org”`
 
