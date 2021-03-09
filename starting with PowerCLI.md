@@ -1,5 +1,5 @@
-Few Commands to Start with
-Get-VM
+## Few Commands to Start with
+`Get-VM
 
 Get-VMHost
 
@@ -7,7 +7,7 @@ Get-Folder
 
 Get-Datacenter
 
-Get-Datastore
+Get-Datastor`
 
 ## Managing Tag Categories
 Tag Categories allow you to group related tags together. When you define a category, you can also specify which object types its tags can be applied to and whether more than one tag in the category can be applied to an object. Creating a category with PowerCLI is easy:
@@ -39,19 +39,19 @@ Once you have a tag category you are able to create new tags in it. This is done
 
 You can also create multiple tags – by reading the input values from CSV file or from other cmdlets. Here is how to create tags for each user in the “Example.org” domain:
 
-# Retrieve all user accounts in the “Example.org” domain
+* Retrieve all user accounts in the “Example.org” domain
 
-$userList = Get-VIAccount –User –Domain “Example.org”
+`$userList = Get-VIAccount –User –Domain “Example.org”`
 
-# For each user account create a new tag based on the user’s Id
+ For each user account create a new tag based on the user’s Id
 
-foreach ($user in $userList) { New-Tag –Category “Owner” –Name $user.Id –Description $user.Description }
+`foreach ($user in $userList) { New-Tag –Category “Owner” –Name $user.Id –Description $user.Description }`
 
 Modifying an existing tag is done through the Set-Tag cmdlet. It allows you to change the tag’s name and description:
 
 `Get-Tag “jsmith” –Category “Owner” | Set-Tag –Description “John Smith”`
 
-Removing a tag is done through Remove-Tag cmdlet, similar to removing a category. When removing a tag you will automatically remove any assignments of this tag.
+Removing a tag is done through `Remove-Tag cmdlet`, similar to removing a category. When removing a tag you will automatically remove any assignments of this tag.
 
 Now that you have created some tags – it’s time to put them to use. You can assign tag to an entity using the New-TagAssignment cmdlet. Here is how to assign the “jsmith” tag to the VMs that belong to John (we assume they have “jsmith” in their name):
 
