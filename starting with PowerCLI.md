@@ -1,13 +1,9 @@
 ## Few Commands to Start with
-`Get-VM
-
-Get-VMHost
-
-Get-Folder
-
-Get-Datacenter
-
-Get-Datastor`
+`Get-VM`
+`Get-VMHost`
+`Get-Folder`
+`Get-Datacenter`
+`Get-Datastor`
 
 ## Managing Tag Categories
 Tag Categories allow you to group related tags together. When you define a category, you can also specify which object types its tags can be applied to and whether more than one tag in the category can be applied to an object. Creating a category with PowerCLI is easy:
