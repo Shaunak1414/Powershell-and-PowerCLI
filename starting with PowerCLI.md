@@ -31,7 +31,7 @@ Removing an existing category is just as easy by using the Remove-TagCategory cm
 Managing Tags
 Once you have a tag category you are able to create new tags in it. This is done through the New-Tag cmdlet. For example in our “Owner” category let’s create a tag for John Smith:
 
-`New-Tag –Name “jsmith” –Category “Owner”`
+`New-Tag –Name “shaunak” –Category “Owner”`
 
 You can also create multiple tags – by reading the input values from CSV file or from other cmdlets. Here is how to create tags for each user in the “Example.org” domain:
 
@@ -45,18 +45,22 @@ Retrieve all user accounts in the “Example.org” domain
 
 Modifying an existing tag is done through the Set-Tag cmdlet. It allows you to change the tag’s name and description:
 
-`Get-Tag “jsmith” –Category “Owner” | Set-Tag –Description “John Smith”`
+`Get-Tag “shaunak” –Category “Owner” | Set-Tag –Description “Shaunak Verma”`
 
 Removing a tag is done through `Remove-Tag cmdlet`, similar to removing a category. When removing a tag you will automatically remove any assignments of this tag.
 
-Now that you have created some tags – it’s time to put them to use. You can assign tag to an entity using the New-TagAssignment cmdlet. Here is how to assign the “jsmith” tag to the VMs that belong to John (we assume they have “jsmith” in their name):
+Now that you have created some tags – it’s time to put them to use. You can assign tag to an entity using the New-TagAssignment cmdlet. Here is how to assign the “shaunak” tag to the VMs which belong to me (I assume I have “shaun” in my name):P
 
-`Get-VM –Name *jsmith* | New-TagAssignment –Tag “jsmith”`
+`Get-VM –Name *shaun* | New-TagAssignment –Tag “shaunak”`
 
 You can easily retrieve all tag assignments on a given entity:
 
-`Get-VM jsmith_vm1 | Get-TagAssignment`
+`Get-VM shaunak_vm1 | Get-TagAssignment`
 
 Or you can retrieve all VMs that have a given tag associated with them:
 
-`Get-VM –Tag “jsmith”`
+`Get-VM –Tag “shaunak”`
+
+Lets get details of VMs attahed to a somewhat known tag. My friend Adeoluwa I cant spel his name but i hope he has used it somewhere in his tag :P
+
+`get-vm -tag "*ade*"`
