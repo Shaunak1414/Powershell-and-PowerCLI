@@ -61,6 +61,10 @@ Or you can retrieve all VMs that have a given tag associated with them:
 
 `Get-VM –Tag “shaunak”`
 
-Lets get details of VMs attahed to a somewhat known tag. My friend Adeoluwa I cant spel his name but i hope he has used it somewhere in his tag :P
+Lets get details of VMs attahed to a somewhat known tag. My friend Adeoluwa I cant spel his name but i hope he has used it somewhere in his tag :-P
 
 `get-vm -tag "*ade*"`
+
+for complete dteails of a vm
+
+`get-vm -name "*shaun*" | format-list `
