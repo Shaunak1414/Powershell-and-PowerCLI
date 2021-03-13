@@ -6,7 +6,7 @@
 `Get-Datastor`
 
 ## Managing Tag Categories
-* Tag Categories allow you to group related tags together. When you define a category, you can also specify which object types its tags can be applied to and whether more than one tag in the category can be applied to an object. Creating a category with PowerCLI is easy:
+* Tag Categories allows us to group related tags together. When we define a category, we can also specify which object types its tags can be applied to and whether more than one tag in the category can be applied to an object. Creating a category with PowerCLI is easy:
 
 `New-TagCategory –Name [name] -Description [description] -Cardinality [single/multiple] –EntityType [list of types]`
 
@@ -14,22 +14,22 @@ For example let’s create a category that will contain a tag for each vSphere u
 
 `New-TagCategory –Name “Owner” –Cardinality single –EntityType VirtualMachine`
 
-The “-Cardinality” parameter specifies whether a single or multiple tags from this category can be applied to the same object at the same time. If you don’t specify it the default is “single”. The “-EntityType” parameter allows you to specify the object types to which you can attach tags from this category. If you omit the parameter by default the category will be applicable to all supported entity types.
+The “-Cardinality” parameter specifies whether a single or multiple tags from this category can be applied to the same object at the same time. If we don’t specify it the default is “single”. The “-EntityType” parameter allows us to specify the object types to which we can attach tags from this category. If we omit the parameter by default the category will be applicable to all supported entity types.
 
 The full list of supported entity types is: VirtualMachine, VM, VMHost, Folder, Datastore, DatastoreCluster, Cluster, ResourcePool, DistributedSwitch, DistributedPortGroup, VirtualPortGroup, VApp, Datacenter, All.
 
-* Modifying an existing TagCategory is done through Set-TagCategory cmdlet. You can change its name, description, cardinality (you can only extend it to “multiple”, restricting it to “single” is not possible) and add more entity types (again you can only extend the applicable entity types).
+* Modifying an existing TagCategory is done through Set-TagCategory cmdlet. We can change its name, description, cardinality (you can only extend it to “multiple”, restricting it to “single” is not possible) and add more entity types (again we can only extend the applicable entity types).
 
 In our previous example the “Owner” category is only applicable to Virtual Machines, however VApps can also have an owner. Let’s modify the category to allow tagging VApps as well:
 
 `Get-TagCategory “Owner” | Set-TagCategory –AddEntityType VApp`
 
-* Removing an existing category is just as easy by using the Remove-TagCategory cmdlet. Note that by removing a category you are also removing all tags in it and any assignments of these tags! Here is an example:
+* Removing an existing category is just as easy by using the Remove-TagCategory cmdlet. Note that by removing a category we are also removing all tags in it and any assignments of these tags! Here is an example:
 
 `Remove-TagCategory “Owner”`
 
 ## Managing Tags
-* Once you have a tag category you are able to create new tags in it. This is done through the New-Tag cmdlet. For example in our “Owner” category let’s create a tag for John Smith:
+* Once we have a tag category you are able to create new tags in it. This is done through the New-Tag cmdlet. For example in our “Owner” category let’s create a tag for Shaunak Verma:
 
 `New-Tag –Name “shaunak” –Category “Owner”`
 
@@ -43,7 +43,7 @@ We can also create multiple tags – by reading the input values from CSV file o
 
 `foreach ($user in $userList) { New-Tag –Category “Owner” –Name $user.Id –Description $user.Description }`
 
-* Modifying an existing tag is done through the Set-Tag cmdlet. It allows you to change the tag’s name and description:
+* Modifying an existing tag is done through the Set-Tag cmdlet. It allows us to change the tag’s name and description:
 
 `Get-Tag “shaunak” –Category “Owner” | Set-Tag –Description “Shaunak Verma”`
 
